@@ -34,11 +34,11 @@ ES支持如下field类型：
 
 >注意：如果你把值为“123”的field加入索引，ES会把它当做string。但如果这个field已经被mapping为long，ES将把它转为long，如果无法解析则抛异常。
 
-#####查看Mapping
+##### 查看Mapping
 
 	curl -XGET http://{ip}:{port}/{index_name}/_mapping/{type_name}
 	
-#####返回结果
+##### 返回结果
 
 ```
 {
@@ -63,7 +63,7 @@ ES支持如下field类型：
 }
 ```
 
-###1.1 自定义Field Mapping
+### 1.1 自定义Field Mapping
 
 尽管基本的field数据类型已经满足大部分情况，有时也需要为某些field定制mapping。你可以：
 
@@ -97,32 +97,32 @@ index 取值：
 
 analyzer：此属性用来指定为string field建立索引和按索引搜索时的analyzer。默认情况ES采用standard analyzer，也可指定为其他的内置analyzer，例如：whitespace，simple或english。
 
-###1.2 更新Mapping
+### 1.2 更新Mapping
 
 当创建索引时你可以指定mapping；索引创建后，也可以给一个mapping添加新field并为其指定type。
 但是，你不应去修改一个已经存在的field的Mapping设置，因为此field的索引已经创建，若修改了它的Mapping，索引就不可用了。
 
-#####删除Index
+##### 删除Index
 
 	curl -XDELETE http://10.5.237.212:8411/order
 	
-#####创建index和type并制定mapping
+##### 创建index和type并制定mapping
 
 	curl -XPUT http://10.5.237.212:8411/order -d '{"mappings":{"orderDetail":{"properties":{"tag":{"type":"string","index":"not_analyzed"}}}}}'
 	
-#####为mapping添加新field并指定type属性
+##### 为mapping添加新field并指定type属性
 
 	curl -XPUT http://10.5.237.212:8411/order/_mapping/orderDetail -d '{"properties":{"tag_new":{"type":"string","index":"analyzed"}}}'
 	
-###1.3 测试Mapping
+### 1.3 测试Mapping
 
 可以用analyze API来测试mapping
 
-#####测试type为not_analyze的field
+##### 测试type为not_analyze的field
 
 	curl -XGET http://10.5.237.212:8411/order/_analyze -d '{"field":"tag","text":"New York"}'
 	
-#####测试结果
+##### 测试结果
 
 ```
 {
@@ -137,11 +137,11 @@ analyzer：此属性用来指定为string field建立索引和按索引搜索时
 }
 ```
 
-#####测试type为analyze的field
+##### 测试type为analyze的field
 
 	curl -XGET http://10.5.237.212:8411/order/_analyze -d '{"field":"tag_new","text":"New York"}'
 	
-#####测试结果
+##### 测试结果
 
 ```
 {
