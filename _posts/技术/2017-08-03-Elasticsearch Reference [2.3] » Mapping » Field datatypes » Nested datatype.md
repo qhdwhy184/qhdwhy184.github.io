@@ -17,7 +17,9 @@ description:
 对象数组的索引方式可能跟你预想的不一样。由于Lucene中没有对象类型的field，ES把对象类型的field都转为一个field和value的列表。例如：
 ##### 将document写入index
 
-	curl -XPUT http://10.5.237.212:8411/order/orderDetail/1 -d {"group" : "fans","user" : [ {"first" : "John","last" :  "Smith"},{"first" : "Alice","last" :  "White"}]}
+```
+curl -XPUT http://10.5.237.212:8411/order/orderDetail/1 -d {"group" : "fans","user" : [ {"first" : "John","last" :  "Smith"},{"first" : "Alice","last" :  "White"}]}
+```
 
 上面添加的user这个field 是一个对象数组，这个document按id查出如下：
 
