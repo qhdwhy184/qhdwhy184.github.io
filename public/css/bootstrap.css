@@ -3198,7 +3198,8 @@ textarea.input-lg, select[multiple].input-lg {
 
 .btn-primary {
     color: #fff;
-    background-color: #16a085;
+    /*background-color: #16a085;*/
+    background-color: #b47e40;
     border-color: #16a090;
 }
 
@@ -5341,7 +5342,8 @@ a.thumbnail:hover, a.thumbnail:focus, a.thumbnail.active {
 a.list-group-item-lay:hover, a.list-group-item-lay:focus {
     text-decoration: none;
     color: #fff;
-    background-color: #16a085;
+    /*background-color: #16a085;*/
+    background-color: #b47e40;
 }
 
 .list-group-item-lay:first-child {
