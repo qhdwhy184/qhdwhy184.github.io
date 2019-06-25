@@ -8,6 +8,7 @@ description:
 ---
 
 # make sure your pom packaging is set with 'war'
+
   <?xml version="1.0" encoding="UTF-8"?>
   <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -22,3 +23,14 @@ description:
     <artifactId>spring-mvc</artifactId>
     <packaging>war</packaging>            <!--make sure your pom packaging is set with 'war'-->
   </project>
+
+# reimport 'pom.xml'
+
+# add configuration 
+1. Tomcat Server -> local
+2. Server tab: Application server: choose tomcat path on the disk
+3. Deployment tab: Click button '+' to add '{artifactId}:war exploded'
+
+# Done - you can run the configurated tomcat server now.
+
+
