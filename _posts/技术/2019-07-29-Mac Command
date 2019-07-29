@@ -7,6 +7,9 @@ keywords:
 description: 
 ---
 
+
+
+
 | 1 | sudo lsof -i -n -P | grep TCP | Who is listening on TCP port |
 
 
