@@ -8,7 +8,7 @@ description:
 ---
 
 
-|左对齐（默认）|两边对齐|右对齐|sadf|
+|1|2|3|4|
 | 1 | sudo lsof -i -n -P \| grep TCP | Who is listening on TCP port |
 
 
